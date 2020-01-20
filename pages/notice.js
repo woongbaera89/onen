@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import Link from 'next/link'
 
-function HomePage() {
+function NoticePage() {
   useEffect(() => {
     
   }, []);
@@ -15,4 +15,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default NoticePage

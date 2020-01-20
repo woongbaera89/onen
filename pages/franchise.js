@@ -1,12 +1,20 @@
 import React, {useEffect} from 'react'
 import Link from 'next/link'
 
-function HomePage() {
+function FranchisePage() {
   useEffect(() => {
     
   }, []);
   return ( 
     <div>
+    brand
+      brand
+      brand
+      brand
+      brand
+      brand
+      brand
+      brand
       <style jsx>{`
         .home {
         }
@@ -15,4 +23,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default FranchisePage

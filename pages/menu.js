@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react'
 import Link from 'next/link'
 
-function HomePage() {
+function MenuPage() {
   useEffect(() => {
     
   }, []);
   return ( 
     <div>
+      menu
       <style jsx>{`
         .home {
         }
@@ -15,4 +16,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default MenuPage

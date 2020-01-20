@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react'
 import Link from 'next/link'
 
-function HomePage() {
+function BrandPage() {
   useEffect(() => {
     
   }, []);
   return ( 
     <div>
+      <img src="../static/brand.jpg"/>
       <style jsx>{`
         .home {
         }
@@ -15,4 +16,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default BrandPage

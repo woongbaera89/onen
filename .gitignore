@@ -1,0 +1,8 @@
+.next
+node_modules/**/*
+.DS_Store
+out
+.env
+.serverless_nextjs
+.serverless
+*.log

@@ -4,11 +4,11 @@ import Link from 'next/link'
 
 
 const menu = [
-  {name:"brand", path:"/brand"},
-  {name:"menu", path:"/menu"},
-  {name:"store", path:"/store"},
-  {name:"franchise", path:"/franchise"},
-  {name:"notice", path:"/notice"}
+  {name:"brand", path:"/brand", subname:"브랜드 소개"},
+  {name:"menu", path:"/menu", subname:"메뉴 소개"},
+  {name:"store", path:"/store", subname:"스토어 안내"},
+  {name:"franchise", path:"/franchise", subname:"창업문의"},
+  {name:"notice", path:"/notice", subname:"원엔 소식"}
 ];
 
 
@@ -60,7 +60,7 @@ function navigation({Component, pageProps, pathname}) {
         <ul>
           {beforeMenu.map((each) => (
             <li key={each.name}>
-              <Link href={each.path == pathname ? "/" : each.path}><a className="nav-link">{each.name}</a></Link>
+              <Link href={each.path == pathname ? "/" : each.path}><a className="nav-link">{each.name}<span>{each.subname}</span></a></Link>
               {each.name == "brand" && (
                 <Link href="/">
                   <a className="logo">
@@ -74,7 +74,9 @@ function navigation({Component, pageProps, pathname}) {
             <Component {...pageProps} />
           </div>
           {afterMenu.map((each) => (
-            <li key={each.name}><Link href={each.path == pathname ? "/" : each.path}><a className="nav-link">{each.name}</a></Link></li>
+            <li key={each.name}>
+              <Link href={each.path == pathname ? "/" : each.path}><a className="nav-link">{each.name}<span>{each.subname}</span></a></Link>
+            </li>
           ))}
         </ul>
       </nav> 
@@ -83,6 +85,7 @@ function navigation({Component, pageProps, pathname}) {
           transition:all 0.4s;
           border-top:3px solid #000;
           margin-bottom:-3px;
+          position:relative;
         }
         .slide-up {
           height:0;
@@ -127,6 +130,15 @@ function navigation({Component, pageProps, pathname}) {
           text-decoration:none;
           display:block;
         }
+        .nav-link span{
+          opacity:0;
+          font-size:24px;
+          margin-left:14px;
+          transition:opacity 0.3s;
+        }
+        .nav-link:hover span{
+          opacity:1;
+        }
         @media only screen and (max-width: 960px)  {
 
           .page-transition {
@@ -162,6 +174,9 @@ function navigation({Component, pageProps, pathname}) {
             font-size:12vh;
             line-height:100px;
             line-height:22vh;
+          }
+          .nav-link span{
+            display:none;
           }
 
         }

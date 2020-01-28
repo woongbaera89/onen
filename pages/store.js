@@ -1,19 +1,29 @@
-import React, {useEffect} from 'react'
-import Link from 'next/link'
+import Floatmenu from '../comps/floatmenu'
 
-function StorePage() {
-  useEffect(() => {
-    
-  }, []);
+export default function StorePage() {
   return ( 
     <div>
-      store
+      <Floatmenu 
+        menu={["gangnam","hongik uni.","seocho"]}
+        handleClick={(idx) => {
+          const el = document.getElementsByTagName(`section`)[idx];
+          if(el) {
+            el.scrollIntoView({behavior: "smooth"}); 
+          }
+      }}/>
+      <div>
+        <section>
+          <img className="dd" src="../static/store.jpg"/>
+        </section>
+      </div>
       <style jsx>{`
-        .home {
+        img {
+          vertical-align:top;
+        }
+        section {
+          text-align:center;
         }
       `}</style>
     </div>
   )
 }
-
-export default StorePage

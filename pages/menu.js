@@ -1,19 +1,38 @@
-import React, {useEffect} from 'react'
-import Link from 'next/link'
+import Floatmenu from '../comps/floatmenu'
 
-function MenuPage() {
-  useEffect(() => {
-    
-  }, []);
+export default function MenuPage() {
   return ( 
     <div>
-      menu
+      <Floatmenu 
+        menu={["korean","japanese","chinese"]}
+        handleClick={(idx) => {
+          const el = document.getElementsByTagName(`section`)[idx];
+          if(el) {
+            el.scrollIntoView({behavior: "smooth"}); 
+          }
+      }}/>
+      <div>
+        <section>
+          <img className="dd" src="../static/menu_1.jpg"/>
+          <img className="mm" src="../static/menu_1_m.jpg"/>
+        </section>
+        <section>
+          <img className="dd" src="../static/menu_2.jpg"/>
+          <img className="mm" src="../static/menu_2_m.jpg"/>
+        </section>
+        <section>
+          <img className="dd" src="../static/menu_3.jpg"/>
+          <img className="mm" src="../static/menu_3_m.jpg"/>
+        </section>
+      </div>
       <style jsx>{`
-        .home {
+        img {
+          vertical-align:top;
+        }
+        section {
+          text-align:center;
         }
       `}</style>
     </div>
   )
 }
-
-export default MenuPage

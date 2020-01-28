@@ -11,8 +11,8 @@ function banner(){
       <div className="desc">창업문의<br/> <a href="tel:1588-0000">1588-0000</a></div>
       <div className="inputbox">
         <div>
-          <label>이름</label><input type="text" id="name" name="onen_name" required/><br/>
-          <label>연락처</label><input type="tel" id="phone" name="onen_phone" required/>  
+          <label>이름</label><input type="text" id="onen_name" name="onen_name" required/><br/>
+          <label>연락처</label><input type="tel" id="onen_phone" name="onen_phone" required/>  
         </div>
         <div>
           <input type="submit" id="submit" value="상담신청"/>
@@ -45,7 +45,7 @@ function banner(){
           display:flex;
         }
 
-        label, #name, #phone {
+        label, #onen_name, #onen_phone {
           display:inline-block;
           background:none; 
           border:0;
@@ -57,15 +57,15 @@ function banner(){
           font-weight:bold;
           vertical-align:top;
         }
-        #name, #phone  {
+        #onen_name, #onen_phone  {
           padding-left:17px;
           margin-right:17px;
           margin-left:-1px;
         }
-        #name {
+        #onen_name {
           width:140px;
         }
-        #phone {
+        #onen_phone {
           width:200px;
         }
 

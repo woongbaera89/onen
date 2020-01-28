@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Router from 'next/router'
 import Link from 'next/link'
+import Chapstick from '../comps/chapstick'
+import Social from '../comps/social'
 
 
 const menu = [
@@ -57,24 +59,12 @@ function navigation({Component, pageProps, pathname}) {
   return ( 
     <div>
       <nav>
-        
         <ul>
           <Link href="/">
             <a className="logo">
               <img src="../static/logo.png"/>
             </a>
           </Link>
-          <div className="social">
-            <a href="https://www.instagram.com/one_n_official/" target="_blank">
-              <img src="../static/ic_instagram.png"/>
-            </a>
-            <a href="https://www.youtube.com/channel/one_n_official" target="_blank">
-              <img src="../static/ic_youtube.png"/>
-            </a>
-            <a href="https://www.facebook.com/official.one.n" target="_blank">
-              <img src="../static/ic_facebook.png"/>
-            </a>
-          </div>
           {beforeMenu.map((each) => (
             <li key={each.name}>
               <Link href={each.path == pathname ? "/" : each.path}>
@@ -83,6 +73,8 @@ function navigation({Component, pageProps, pathname}) {
                   <span>{each.subname}</span>
                 </a>
               </Link>
+              <Chapstick/>
+              {each.name === 'mt5' && <Social/>}
             </li>
           ))}
           <div key={"comp"} className={`page-transition ${animate}`}>
@@ -96,6 +88,7 @@ function navigation({Component, pageProps, pathname}) {
                   <span>{each.subname}</span>
                 </a>
               </Link>
+              <Chapstick/>
             </li>
           ))}
         </ul>
@@ -132,17 +125,6 @@ function navigation({Component, pageProps, pathname}) {
         .slide-down {
           overflow:hidden;
         }
-        .social {
-          position:absolute;
-          right:26px;
-          bottom:20px;
-          z-index:9;
-        }
-        .social a img{
-          height:38px;
-          width:38px;
-          margin:0 0 0 10px;
-        }
         .logo {
           position:absolute;
           right:36px;
@@ -165,7 +147,6 @@ function navigation({Component, pageProps, pathname}) {
         li {
           height:163px;
           border-top:3px solid #000;
-          overflow:hidden;
           position:relative;
         }
         .nav-link {
@@ -203,17 +184,6 @@ function navigation({Component, pageProps, pathname}) {
           }
           nav {
             min-height:92vh;
-          }
-          .social {
-            position:absolute;
-            right:20px;
-            bottom:15px;
-            z-index:9;
-          }
-          .social a img{
-            height:24px;
-            width:24px;
-            margin:0 0 0 6px;
           }
           .logo {
             width:50px;

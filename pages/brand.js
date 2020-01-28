@@ -1,15 +1,14 @@
 import Floatmenu from '../comps/floatmenu'
 
-function BrandPage() {
+export default function BrandPage() {
   return ( 
-    <div className="brand">
+    <div>
       <Floatmenu 
         menu={["vision","brand_story","campaign","BI"]}
         handleClick={(idx) => {
           const el = document.getElementsByTagName(`section`)[idx];
           if(el) {
             el.scrollIntoView({behavior: "smooth"});
-            // window.scrollTo(0, el.getBoundingClientRect().top)   
           }
       }}/>
       <div>
@@ -23,13 +22,13 @@ function BrandPage() {
         </section>
         <section>
           <div className="video-title">now / new<br/><small>원엔에서 즐겨보세요</small></div>
-          <iframe src="https://www.youtube.com/embed/asdfasdf" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/asdfasdf" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           
           <div className="video-title">nice shot / nineteen<br/><small>원엔에서 함께하세요</small></div>
-          <iframe src="https://www.youtube.com/embed/asdfasdf" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/asdfasdf" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           
           <div className="video-title">nonsense / no matter<br/><small>원엔에서 찾아보세요</small></div>
-          <iframe src="https://www.youtube.com/embed/asdfasdf" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/asdfasdf" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </section>
         <section>
           <img className="dd" src="../static/brand_bi.jpg"/>
@@ -39,6 +38,9 @@ function BrandPage() {
       <style jsx>{`
         section {
           text-align:center;
+        }
+        img {
+          vertical-align:top;
         }
         .video-title {
           font-weight:bold;
@@ -56,9 +58,6 @@ function BrandPage() {
         }
         iframe:last-child {
           margin-bottom:50px;
-        }
-        .brand img {
-          vertical-align:top;
         }
         @media only screen and (max-width: 960px)  {
 
@@ -84,5 +83,3 @@ function BrandPage() {
     </div>
   )
 }
-
-export default BrandPage

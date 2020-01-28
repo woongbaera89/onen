@@ -27,7 +27,7 @@ function banner(){
           left:0;
           right:0;
           max-width:1364px;
-          height:82px; 
+          height:76px; 
           background:#FF7575;
           border-top:3px solid #000;
           justify-content:space-between;
@@ -92,8 +92,8 @@ function banner(){
         }
         @media only screen and (max-width: 960px)  {
           .banner {
-            height:72px; 
-            padding: 0 16px;
+            height:70px; 
+            padding: 0 20px;
             border-top:1.5px solid #000;
           }
           .banner br {

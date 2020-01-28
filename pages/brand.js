@@ -14,21 +14,71 @@ function BrandPage() {
       }}/>
       <div>
         <section>
-          <img src="../static/brand_vision.jpg"/>
+          <img className="dd" src="../static/brand_vision.jpg"/>
+          <img className="mm" src="../static/brand_vision_m.jpg"/>
         </section>
         <section>
-          <img src="../static/brand_story.jpg"/>
+          <img className="dd" src="../static/brand_story.jpg"/>
+          <img className="mm" src="../static/brand_story_m.jpg"/>
         </section>
         <section>
-          <img src="../static/brand_campaign.jpg"/>
+          <div className="video-title">now / new<br/><small>원엔에서 즐겨보세요</small></div>
+          <iframe src="https://www.youtube.com/embed/asdfasdf" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+          <div className="video-title">nice shot / nineteen<br/><small>원엔에서 함께하세요</small></div>
+          <iframe src="https://www.youtube.com/embed/asdfasdf" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+          <div className="video-title">nonsense / no matter<br/><small>원엔에서 찾아보세요</small></div>
+          <iframe src="https://www.youtube.com/embed/asdfasdf" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
         <section>
-          <img src="../static/brand_bi.jpg"/>
+          <img className="dd" src="../static/brand_bi.jpg"/>
+          <img className="mm" src="../static/brand_bi_m.jpg"/>
         </section>
       </div>
       <style jsx>{`
+        section {
+          text-align:center;
+        }
+        .video-title {
+          font-weight:bold;
+          font-size:26px;
+          letter-spacing:-0.5px;
+          padding:100px 0 24px;
+        }
+        .video-title small {
+          font-size:21px;
+        }
+        iframe {
+          width:720px;
+          height:405px;
+          margin:0 auto;
+        }
+        iframe:last-child {
+          margin-bottom:50px;
+        }
         .brand img {
           vertical-align:top;
+        }
+        @media only screen and (max-width: 960px)  {
+
+          .video-title {
+            font-weight:bold;
+            font-size:15px;
+            letter-spacing:-0.5px;
+            padding:50px 0 15px;
+          }
+          .video-title small {
+            font-size:11px;
+          }
+          iframe {
+            width:90vw;
+            height:50.625vw;
+            margin:0 auto;
+          }
+          iframe:last-child {
+            margin-bottom:25px;
+          }
         }
       `}</style>
     </div>

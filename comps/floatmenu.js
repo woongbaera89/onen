@@ -71,9 +71,27 @@ function floatmenu({menu, handleClick}) {
           background:#FF7575;
         }
         @media only screen and (max-width: 960px)  {
-
-        }
-        @media only screen and (max-width: 480px)  {
+          .box{
+            position: relative;
+            margin-top:-3px;
+          }
+          .box.true ul {
+            position:fixed;
+            top:0px;
+            right:20px;
+            z-index: 1;
+          }
+          ul {
+            right:20px;
+          }
+          li {
+            font-size:11px;
+            height:22px;
+            line-height:20px;
+            padding: 0 9px;
+            border:2px solid #000;
+            min-width:38px;
+          }
 
         }
       `}</style>

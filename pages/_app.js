@@ -28,6 +28,9 @@ function MyApp({ Component, pageProps }) {
           padding:0;
           background:#D1D1D1;
         }
+        body{
+          padding-bottom:70px;
+        }
         .app {
           width:100%;
           max-width:1364px;
@@ -45,15 +48,12 @@ function MyApp({ Component, pageProps }) {
             margin:124px auto;
           }
         }
+
+        @media only screen and (min-width: 961px)  {
+          .mm { display:none; }
+        }
         @media only screen and (max-width: 960px)  {
-
-          html, body {
-            background:#fff;
-          }
-          .app {
-            zoom:1;
-          }
-
+          .dd { display:none; }
         }
       `}</style>
     </div>

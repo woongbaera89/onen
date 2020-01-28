@@ -7,6 +7,7 @@ function NoticePage() {
   }, []);
   return ( 
     <div>
+      asdfasdfasdfasdfaf
       <style jsx>{`
         .home {
         }

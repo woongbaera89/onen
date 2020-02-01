@@ -5,8 +5,10 @@ function NoticePage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://onen.co.kr/notices")
-    .then(response => response.json())
+    fetch("http://localhost:1337/notices")
+    .then(response => {
+      if(response.ok) return response.json();
+    })
     .then(data => setData(data));
   }, []);
 

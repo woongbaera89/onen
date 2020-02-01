@@ -7,9 +7,9 @@
     "styled-jsx": "^3.2.4"
   },
   "scripts": {
-    "dev": "next -p 8080",
+    "dev": "next -p 3000",
     "build": "next build",
-    "start": "next start -p 8080",
+    "start": "next start -p 3000",
     "export": "next export"
   }
 }

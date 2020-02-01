@@ -10,7 +10,7 @@ const menu = [
   {name:"mt2", path:"/menu", subname:"메뉴 소개"},
   {name:"mt3", path:"/store", subname:"스토어 안내"},
   {name:"mt4", path:"/franchise", subname:"창업문의"},
-  {name:"mt5", path:"/notice", subname:"원엔 소식"}
+  {name:"mt5", path:"/notice", subname:"원앤 소식"}
 ];
 
 
@@ -89,6 +89,7 @@ function navigation({Component, pageProps, pathname}) {
                 </a>
               </Link>
               <Chapstick/>
+              {each.name === 'mt5' && <Social/>}
             </li>
           ))}
         </ul>

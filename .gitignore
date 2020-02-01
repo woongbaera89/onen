@@ -5,3 +5,4 @@ design
 .env
 *.log
 .ai
+out/**/*

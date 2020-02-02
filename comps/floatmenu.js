@@ -11,16 +11,34 @@ function floatmenu({menu, handleClick}) {
     setfixed(menuRef.current.getBoundingClientRect().top <= 0)
     setright(36+Math.max((document.body.offsetWidth-1364)/2, 0))
   };
-  useEffect(() => {
+  const resize = e => {
+    setright(36+Math.max((document.body.offsetWidth-1364)/2, 0))
+  };
 
+  useEffect(() => {
+    setright(36+Math.max((document.body.offsetWidth-1364)/2, 0))
+    window.addEventListener("resize", resize);
     window.addEventListener("scroll", listener);
     return () => {
+      window.removeEventListener("resize", resize);
       window.removeEventListener("scroll", listener);
     };
   }, []);
 
   return ( 
     <div>
+      <div className="move-top" onClick={() => {
+        const el = document.getElementById("app");
+        if(el) {
+          el.scrollIntoView({behavior: "smooth"});
+        }
+      }}>
+        {menu[0] === "korean" ? (
+          <img src="../static/ic_top_w.png"/>
+        ) : (
+          <img src="../static/ic_top_b.png"/>
+        )}
+      </div>
       <div ref={menuRef} className={'box '+fixed}>
         <ul>
           {menu.map((each,idx) => (
@@ -34,6 +52,13 @@ function floatmenu({menu, handleClick}) {
         </ul>
       </div>
       <style jsx>{`
+        .move-top {
+          position:fixed;
+          right:${right-36}px;
+          bottom:240px;
+          z-index:99;
+          width:70px;
+        }
         .box{
           position: relative;
           margin-top:-3px;
@@ -42,7 +67,7 @@ function floatmenu({menu, handleClick}) {
           position:fixed;
           top:0;
           right:${right}px;
-          z-index: 1;
+          z-index: 3;
         }
         ul, li {
           list-style:none;
@@ -71,6 +96,13 @@ function floatmenu({menu, handleClick}) {
           background:#FF7575;
         }
         @media only screen and (max-width: 960px)  {
+          .move-top {
+            position:fixed;
+            right:0px;
+            bottom:120px;
+            z-index:99;
+            width:32px;
+          }
           .box{
             position: relative;
             margin-top:-3px;

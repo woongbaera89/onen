@@ -5,9 +5,9 @@ function NoticePage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/notices")
+    fetch("http://onen.co.kr/notices")
     .then(response => {
-      if(response.ok) return response.json();
+      if(response.status == 200) return response.json();
     })
     .then(data => setData(data));
   }, []);
@@ -21,7 +21,7 @@ function NoticePage() {
   }
 
   return ( 
-    <div>
+    <div className="notice">
       <div className="title">원앤의 새로운 소식입니다</div>
       <ul>
         <li className="head">
@@ -76,7 +76,6 @@ function NoticePage() {
           display:flex;
           justify-content:space-between;
           height:36px;
-          border-bottom:1px solid #aaa;
           align-items:center;
           width:100%;
         }
@@ -102,6 +101,11 @@ function NoticePage() {
         }
         li:last-child {
           border-bottom:1px solid #000;
+        }
+        @media only screen and (max-width: 960px)  {
+          .notice{
+            zoom:0.5;
+          }
         }
       `}</style>
     </div>

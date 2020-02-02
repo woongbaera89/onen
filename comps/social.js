@@ -4,7 +4,7 @@ export default function social() {
         <a href="https://www.instagram.com/one_n_official/" target="_blank">
           <img src="../static/ic_instagram.png"/>
         </a>
-        <a href="https://www.youtube.com/channel/one_n_official" target="_blank">
+        <a href="https://www.youtube.com/channel/UCXtyWrckpR4W7UHwcNFMZ_g" target="_blank">
           <img src="../static/ic_youtube.png"/>
         </a>
         <a href="https://www.facebook.com/official.one.n" target="_blank">

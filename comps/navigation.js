@@ -69,8 +69,9 @@ function navigation({Component, pageProps, pathname}) {
             <li key={each.name}>
               <Link href={each.path == pathname ? "/" : each.path}>
                 <a className="nav-link">
-                  <img src={`../static/${each.name}.png`}/>
-                  <span>{each.subname}</span>
+                  <img className="mm" src={`../static/${each.name}_m.png`}/>
+                  <img className="dd" src={`../static/${each.name}.png`}/>
+                  <span className="dd">{each.subname}</span>
                 </a>
               </Link>
               <Chapstick/>
@@ -185,6 +186,7 @@ function navigation({Component, pageProps, pathname}) {
           }
           nav {
             min-height:92vh;
+            overflow:hidden;
           }
           .logo {
             width:50px;
@@ -198,7 +200,6 @@ function navigation({Component, pageProps, pathname}) {
           li {
             height:100px;
             border-top:2px solid #000;
-            overflow:hidden;
           }
           .nav-link {
             padding:0 16px;
@@ -207,10 +208,10 @@ function navigation({Component, pageProps, pathname}) {
             padding:0 5px 10px;
           }
           .nav-link img {
-            height:60px;
+            height:72px;
             width:auto;
             vertical-align:top;
-            margin-top:30px;
+            margin-top:16px;
 
           }
           .nav-link span{

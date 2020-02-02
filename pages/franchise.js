@@ -56,6 +56,39 @@ export default function FranchisePage() {
                 alert("개인정보 취급방침에 동의해주세요.");
                 return;
               }
+
+              const name = document.getElementById("name").value;
+              const phone = document.getElementById("phone").value;
+              const email = document.getElementById("email").value;
+              const location = document.getElementById("location").value;
+              const budget = document.getElementById("budget").value;
+              const store = document.getElementById("radio2").checked;
+              const content = document.getElementById("content").value;
+
+              const bodyJson ={
+                name,
+                phone,
+                data : {email,location,budget,store,content}
+              }
+              console.log(bodyJson)
+              
+              fetch("http://onen.co.kr/contacts", {
+                method:"POST",
+                headers: { "Content-Type": "application/json; charset=utf-8" },
+                body: JSON.stringify(bodyJson), 
+              })
+              .then(response => {
+                if(response.status == 200) {
+                  alert("신청이 접수되었습니다.")
+                  return response.json();
+                }else {
+                  alert("오류가 발생했습니다. 다시 시도해주세요.")
+                }
+              })
+              .then(data => {
+                console.log(data)
+              });
+
             }}>
 
               <div style={{fontSize:18}}>상담자 정보
@@ -80,7 +113,7 @@ export default function FranchisePage() {
 
               <br/>
               <label htmlFor="budget">예상창업비용</label>
-              <input type="text" id="budget" name="budget" placeholder=""/>
+              <input type="number" id="budget" name="budget" placeholder=""/>
               <label htmlFor="budget" style={{marginLeft:6}}>만원 (숫자만 입력)</label>
 
               <br/>
@@ -92,7 +125,7 @@ export default function FranchisePage() {
 
               <br/>
               <label htmlFor="subject">문의내용</label>
-              <textarea id="subject" name="subject" placeholder=""></textarea>
+              <textarea id="content" name="subject" placeholder=""></textarea>
 
               <br/>
               <input type="submit" value="문의하기"/>
@@ -128,6 +161,7 @@ export default function FranchisePage() {
           float:right;
           background:#B2B2B2;
           -webkit-appearance:none;
+          border-radius:0;
           border:0;
           height:36px;
           font-size:16px;
@@ -146,6 +180,9 @@ export default function FranchisePage() {
         }
         form {
           padding:24px;
+        }
+        input {
+          border-radius:0;
         }
         input, textarea {
           font-size:16px;

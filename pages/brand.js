@@ -21,14 +21,14 @@ export default function BrandPage() {
           <img className="mm" src="../static/brand_story_m.jpg"/>
         </section>
         <section>
-          <div className="video-title">now / new<br/><small>원엔에서 즐겨보세요</small></div>
-          <iframe src="https://www.youtube.com/embed/asdfasdf" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          <div className="video-title">now / new<br/><small>원앤에서 즐겨보세요</small></div>
+          <iframe src="https://www.youtube.com/embed/6xT4PlPeK80" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           
-          <div className="video-title">nice shot / nineteen<br/><small>원엔에서 함께하세요</small></div>
-          <iframe src="https://www.youtube.com/embed/asdfasdf" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          <div className="video-title">nice shot / nineteen<br/><small>원앤에서 함께하세요</small></div>
+          <iframe src="https://www.youtube.com/embed/ETOhai2nvD8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           
-          <div className="video-title">nonsense / no matter<br/><small>원엔에서 찾아보세요</small></div>
-          <iframe src="https://www.youtube.com/embed/asdfasdf" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          <div className="video-title">nonsense / no matter<br/><small>원앤에서 찾아보세요</small></div>
+          <iframe src="https://www.youtube.com/embed/2svzivZPazM" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </section>
         <section>
           <img className="dd" src="../static/brand_bi.jpg"/>

@@ -26,7 +26,7 @@ function chapstick(){
           height:5px;
           background:#FF7575;
           position:absolute;
-          z-index:3;
+          z-index:2;
           left:${x}%;
           top:${y}%;
           transform: rotate(${d}deg);
@@ -41,7 +41,7 @@ function chapstick(){
           height:5px;
           background:#FF7575;
           position:absolute;
-          z-index:3;
+          z-index:2;
           left:${x}%;
           top:${y}%;
           margin-left:-6px;
@@ -86,6 +86,16 @@ function chapstick(){
           }
         }
         @media only screen and (max-width: 960px)  {
+          .stick{
+            width:70px;
+            height:3px;
+          }
+          .stick2{
+            width:70px;
+            height:3px;
+            margin-left:-3px;
+            margin-bottom:-1px;
+          }
 
         }
       `}</style>

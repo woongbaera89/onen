@@ -6,7 +6,8 @@ import Head from 'next/head'
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
-    <div className="app">
+    <div id="app" className="app">
+      <img style={{display:'none'}} src="../static/logo.png"/>
       <Head>
         <title>1/n</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps }) {
         }
         body{
           padding-bottom:70px;
+          overflow-y : scroll;
         }
         .app {
           width:100%;

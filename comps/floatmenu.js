@@ -6,11 +6,49 @@ function floatmenu({menu, handleClick}) {
   const [right, setright] = useState(36);
   const menuRef = useRef();
   
+  const elementInViewport = (el) => {
+    var top = el.offsetTop;
+    var left = el.offsetLeft;
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+  
+    while(el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+  
+    return (
+      top < (window.pageYOffset + window.innerHeight) &&
+      left < (window.pageXOffset + window.innerWidth) &&
+      (top + height) > window.pageYOffset &&
+      (left + width) > window.pageXOffset
+    );
+  }
 
-  const listener = e => {
+  const menuClick = (idx) => {
+    //setselected(idx);
+    if(handleClick) {
+      handleClick(idx);
+    }
+  }
+
+  const listener = () => {
     setfixed(menuRef.current.getBoundingClientRect().top <= 0)
     setright(36+Math.max((document.body.offsetWidth-1364)/2, 0))
+
+    const els = document.getElementsByTagName("section");
+    if(els && els.length > 0){
+      for(let i = 0; i < els.length; i++){
+        const el = els[i];
+        if(elementInViewport(el)){
+          setselected(i);
+          break;
+        }
+      }
+    }
   };
+
   const resize = e => {
     setright(36+Math.max((document.body.offsetWidth-1364)/2, 0))
   };
@@ -19,6 +57,7 @@ function floatmenu({menu, handleClick}) {
     setright(36+Math.max((document.body.offsetWidth-1364)/2, 0))
     window.addEventListener("resize", resize);
     window.addEventListener("scroll", listener);
+    listener();
     return () => {
       window.removeEventListener("resize", resize);
       window.removeEventListener("scroll", listener);
@@ -42,10 +81,7 @@ function floatmenu({menu, handleClick}) {
       <div ref={menuRef} className={'box '+fixed}>
         <ul>
           {menu.map((each,idx) => (
-            <li key={"m"+idx} className={selected == idx} onClick={() => {
-              setselected(idx);
-              if(handleClick) handleClick(idx);
-            }}>
+            <li key={"m"+idx} className={selected == idx} onClick={menuClick.bind(null, idx)}>
               {each}
             </li>
           ))}
@@ -93,6 +129,9 @@ function floatmenu({menu, handleClick}) {
           margin-left:-3px;
         }
         li.true {
+          background:#FF7575;
+        }
+        li:active {
           background:#FF7575;
         }
         @media only screen and (max-width: 960px)  {

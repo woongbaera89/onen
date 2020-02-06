@@ -21,7 +21,8 @@ export default function StorePage() {
             영업시간 : 11:30~22:00
           </div>
           <img className="map" src="../static/store_gangnam.jpg"/>
-          <Slider data={["../static/gangnam1.jpg","../static/gangnam2.jpg","../static/gangnam3.jpg","../static/gangnam4.jpg"]}/>
+          <Slider data={["../static/gangnam1.jpg","../static/gangnam2.jpg","../static/gangnam3.jpg",
+          "../static/gangnam4.jpg","../static/gangnam5.jpg","../static/gangnam6.jpg"]}/>
         </section>
         <section>
           <div className="title">원앤 홍대점</div>

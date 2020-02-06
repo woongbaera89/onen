@@ -25,7 +25,8 @@ export default function slider({data}) {
       <div className="slider-wrap">
       {data && data.map((each, idx) => (
         <div key={'slide'+idx} className="slide" style={{left:idx*100+'%'}} >
-          <img src={each}/>
+          <img className="dd" src={each}/>
+          <img className="mm" src={each.replace(".jpg", "_m.jpg")}/>
         </div>
       ))}
       </div>
@@ -66,16 +67,23 @@ export default function slider({data}) {
         overflow:hidden;
       }
       img{
-        vertical-align:top;
+        width: auto; 
+        height: 100%;
       }
       .slide{
+        text-align:center;
         position:absolute;
         top:0;
         width:100%;
+        height:100%;
         z-index:1;
+        overflow:hidden;
       }
       .slide:first-child {
         position:static;
+      }
+      .slide:first-child img {
+        height:auto;
       }
       .slider-wrap{
         transition: transform 0.6s ease;
